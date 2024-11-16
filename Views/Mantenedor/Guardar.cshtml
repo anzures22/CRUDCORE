@@ -1,0 +1,37 @@
+﻿@model AlumnoModel
+@{
+    ViewData["Title"] = "Guardar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Crear Alumno
+    </div>
+    <div class="card-body">
+        <form asp-action="Guardar" asp-controller="Mantenedor" method="post">
+            <div class="mb-3">
+                <label class="form-label">Matrícula</label>
+                <input asp-for="Matricula" type="text" class="form-control">
+                <span asp-validation-for="Matricula" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Nombre Completo</label>
+                <input asp-for="NombreC" type="text" class="form-control">
+                <span asp-validation-for="NombreC" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Teléfono</label>
+                <input asp-for="Telefono" type="text" class="form-control">
+                <span asp-validation-for="Telefono" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Correo Electrónico</label>
+                <input asp-for="CorreoE" type="email" class="form-control">
+                <span asp-validation-for="CorreoE" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a asp-action="Listar" asp-controller="Mantenedor" class="btn btn-warning">Volver a la lista</a>
+        </form>
+    </div>
+</div>
